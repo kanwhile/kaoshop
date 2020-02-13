@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Product from '../views/Product.vue'
-import Sell from '../views/Sell.vue'
+import sales from '../views/Sales.vue'
 
 Vue.use(VueRouter)
 
@@ -21,14 +21,14 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-      path:'/product',
-      name: 'product',
-      component:Product
+    path: '/product',
+    name: 'product',
+    component: Product
   },
   {
-      path:'/sell',
-      name: 'sell',
-      component:Sell
+    path: '/sales',
+    name: 'sales',
+    component: sales
   }
 ]
 

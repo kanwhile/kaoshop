@@ -1,15 +1,15 @@
 <template>
   <div class="row product content">
     <div class="col">
-      <sell></sell>
+      <sales></sales>
     </div>
   </div>
 </template>
 <script lang="ts">
-import Sell from "../components/Sell/Sell.vue";
+import sales from "../components/Sales/Sales.vue";
 export default {
   components: {
-    "sell": Sell
+    "sales": sales
   }
 };
 </script>
