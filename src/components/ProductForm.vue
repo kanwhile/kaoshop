@@ -1,4 +1,5 @@
 <template>
+<b-container fluid>
   <form id="app" @submit="checkForm">
     <h1 class="h3 mb-3">เพิ่มรายการสินค้า</h1>
     <div class="card">
@@ -52,6 +53,7 @@
       </div>
     </div>
   </form>
+</b-container>
 </template>
 <script>
 import axios from "axios";
