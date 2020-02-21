@@ -45,7 +45,7 @@
           <b-col>
             <b-card class="mb-3">
               <h4>
-                สินค้าคงเหลือ
+                ประวัติการขาย
                 <small>(เดือน กุมภาพันธ์)</small>
               </h4>
               <b-table striped hover :items="items"></b-table>
@@ -77,14 +77,3 @@ export default {
   }
 };
 </script>
-<style>
-.page-title-box .page-title {
-  font-size: 18px;
-  margin: 0;
-  line-height: 75px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  color: inherit;
-}
-</style>

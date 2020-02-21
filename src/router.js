@@ -30,6 +30,11 @@ export default new Router({
           name: 'product',
           component: () => import(/* webpackChunkName: "about" */ './views/Product.vue')
         },
+        {
+          path: '/stock',
+          name: 'stcok',
+          component: () => import(/* webpackChunkName: "about" */ './views/Stock.vue')
+        },
       ]
     },
     

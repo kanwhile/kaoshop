@@ -2,7 +2,7 @@
   <div class="wrapper">
     <dashboard-navbar></dashboard-navbar>
     <main role="main" class="main-content">
-      <div @click="toggleSidebar">
+      <div>
         <fade-transition :duration="200" origin="center top" mode="out-in">
           <!-- your content here -->
           <router-view></router-view>
@@ -28,13 +28,7 @@ export default {
       sidebarBackground: "vue" //vue|blue|orange|green|red|primary
     };
   },
-  methods: {
-    toggleSidebar() {
-      if (this.$sidebar.showSidebar) {
-        this.$sidebar.displaySidebar(false);
-      }
-    }
-  }
+  
 };
 </script>
 <style>

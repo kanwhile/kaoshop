@@ -102,8 +102,6 @@ export default {
       items: [],
       products: [],
       payment: null,
-      paymentChange: 0,
-      totalPrice: 0,
       fields: [
         {
           key: "productName",
@@ -123,7 +121,25 @@ export default {
       ]
     };
   },
-  // define methods under the `methods` object
+  computed: {
+    averageScore: function() {
+      var sum = this.datas.reduce(function(accumulate, data) {
+        return accumulate + Number(data.score);
+      }, 0);
+      return (sum / this.datas.length).toFixed(2);
+    },
+    totalPrice : function()
+    {
+      var sum = this.items.reduce(
+        (sum, key) => sum + parseFloat(key.defaultSellingPrice || 0),
+        0
+      );
+      return sum.toFixed(2);
+    } ,
+    paymentChange : function(){
+      return this.payment - this.totalPrice
+    }
+  },
   methods: {
     fetchProduct: function() {
       if (this.keyword != undefined && this.keyword != "") {
@@ -166,18 +182,9 @@ export default {
       );
       this.summaryPrice();
     },
-    summaryPrice: function() {
-      this.totalPrice = this.items.reduce(
-        (sum, key) => sum + parseFloat(key.defaultSellingPrice || 0),
-        0
-      );
-    },
     formatPrice: function(value) {
       let val = (value / 1).toFixed(2);
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    },
-    paymentDifferent: function() {
-      this.paymentChange = this.payment - this.totalPrice;
     }
   },
   mounted() {
