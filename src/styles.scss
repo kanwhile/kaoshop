@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Sarabun&display=swap');
+body {
+    font-family: 'Sarabun', sans-serif;
+    
+}
+.page-title-box .page-title {
+    font-size: 18px;
+    margin: 0;
+    line-height: 75px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: inherit;
+}
