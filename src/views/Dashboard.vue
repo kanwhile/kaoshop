@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-12">
             <div class="page-title-box">
-              <h4 class="page-title">Dashboard</h4>
+              <h4 class="page-title">แดชบอร์ด</h4>
             </div>
           </div>
         </div>
@@ -13,18 +13,18 @@
           <b-col md="5">
             <b-row>
               <b-col>
-                <card-item text-title="ยอดขาย" number="36254" text-sub="รายวัน"></card-item>
+                <card-item text-title="ยอดขาย" number="36254" text-sub="รายวัน" text-icon="Diamond"></card-item>
               </b-col>
               <b-col>
-                <card-item text-title="ยอดขาย" number="36254" text-sub="รายวัน"></card-item>
+                <card-item text-title="จำนวนบิล" number="36254" text-sub="รายวัน" text-icon="document-text"></card-item>
               </b-col>
             </b-row>
             <b-row>
               <b-col>
-                <card-item text-title="ยอดขาย" number="36254" text-sub="รายวัน"></card-item>
+                <card-item text-title="ยอดขาย" number="36254" text-sub="รวมทั้งเดือน" text-icon="Diamond"></card-item>
               </b-col>
               <b-col>
-                <card-item text-title="ยอดขาย" number="36254" text-sub="รายวัน"></card-item>
+                <card-item text-title="จำนวนบิล" number="36254" text-sub="รวมทั้งเดือน" text-icon="document-text"></card-item>
               </b-col>
             </b-row>
           </b-col>

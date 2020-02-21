@@ -1,15 +1,13 @@
 <template>
   <div class="wrapper">
     <dashboard-navbar></dashboard-navbar>
-    <main role="main" class="main-content">
-      <div>
-        <fade-transition :duration="200" origin="center top" mode="out-in">
-          <!-- your content here -->
-          <router-view></router-view>
-        </fade-transition>
-        <content-footer v-if="!$route.meta.hideFooter"></content-footer>
-      </div>
+    <main role="main" class="content">
+      <fade-transition :duration="200" origin="center top" mode="out-in">
+        <!-- your content here -->
+        <router-view></router-view>
+      </fade-transition>
     </main>
+    <content-footer v-if="!$route.meta.hideFooter"></content-footer>
   </div>
 </template>
 <script>
@@ -27,12 +25,6 @@ export default {
     return {
       sidebarBackground: "vue" //vue|blue|orange|green|red|primary
     };
-  },
-  
+  }
 };
 </script>
-<style>
-[role="main"] {
-  padding-top: 70px; /* Space for fixed navbar */
-}
-</style>

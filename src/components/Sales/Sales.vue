@@ -2,22 +2,24 @@
   <b-container fluid>
     <b-row v-if="!IsPayment">
       <b-col cols="7">
-        <h4>ค้นหารายการสินค้า</h4>
-        <b-form-group id="input-group-1" label="ค้นหาสินค้า:" label-for="input-1">
-          <b-form-input
-            v-model="keyword"
-            type="text"
-            placeholder="ระบุชื่อ"
-            @keypress="fetchProduct"
-          ></b-form-input>
-        </b-form-group>
+        <b-card>
+          <h4>ค้นหารายการสินค้า</h4>
+          <b-form-group id="input-group-1" label="ค้นหาสินค้า:" label-for="input-1">
+            <b-form-input
+              v-model="keyword"
+              type="text"
+              placeholder="ระบุชื่อ"
+              @keypress="fetchProduct"
+            ></b-form-input>
+          </b-form-group>
 
-        <b-list-group v-for="(item, i) in products" :key="`A-${i}`">
-          <b-list-group-item>
-            {{ item.productName }} ราคา {{item.defaultSellingPrice}} บาท
-            <b-button variant="outline-primary" v-on:click="addItems(item)">ซื้อ</b-button>
-          </b-list-group-item>
-        </b-list-group>
+          <b-list-group v-for="(item, i) in products" :key="`A-${i}`">
+            <b-list-group-item>
+              {{ item.productName }} ราคา {{item.defaultSellingPrice}} บาท
+              <b-button variant="outline-primary" v-on:click="addItems(item)">ซื้อ</b-button>
+            </b-list-group-item>
+          </b-list-group>
+        </b-card>
       </b-col>
       <b-col>
         <b-card title="รายการสินค้าที่ซื้อ">
@@ -128,16 +130,15 @@ export default {
       }, 0);
       return (sum / this.datas.length).toFixed(2);
     },
-    totalPrice : function()
-    {
+    totalPrice: function() {
       var sum = this.items.reduce(
         (sum, key) => sum + parseFloat(key.defaultSellingPrice || 0),
         0
       );
       return sum.toFixed(2);
-    } ,
-    paymentChange : function(){
-      return this.payment - this.totalPrice
+    },
+    paymentChange: function() {
+      return this.payment - this.totalPrice;
     }
   },
   methods: {

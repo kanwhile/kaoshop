@@ -1,6 +1,11 @@
 <template>
-  <footer class="footer px-4">
-    
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">
+        © {{year}} -
+        <a href="/#" class="text-muted">Nontarak Gueranukunpong</a>
+      </span>
+    </div>
   </footer>
 </template>
 <script>

@@ -1,7 +1,7 @@
 <template>
   <b-card class="mb-3">
     <div class="float-right">
-      <b-icon-pie-chart-fill class="widget-icon"></b-icon-pie-chart-fill>
+      <b-icon :icon="textIcon" class="widget-icon"></b-icon>
     </div>
     <h5 class="text-muted font-weight-normal mt-0" title="Number of Customers">{{textTitle}}</h5>
     <h3 class="mt-3 mb-3">{{formatPrice(number)}}</h3>
@@ -17,7 +17,7 @@
 <script>
 export default {
   name: "cardItem",
-  props: ["textTitle", "number", "textSub"],
+  props: ["textTitle", "number", "textSub","textIcon"],
   data() {
     return {
       items: null
