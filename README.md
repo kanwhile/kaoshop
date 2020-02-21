@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # kao
 
 ## Project setup
