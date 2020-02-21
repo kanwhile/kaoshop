@@ -3,7 +3,6 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col">
-          <product-item></product-item>
         </div>
       </div>
     </div>
@@ -11,10 +10,6 @@
 </template>
 
 <script>
-import ProductItem from '../components/ProductItem.vue'
-export default {
-  components: {
-    "product-item": ProductItem
-  }
-};
+import ProductItem from "../components/ProductItem.vue";
+export default {};
 </script>
