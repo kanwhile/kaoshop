@@ -1,12 +1,10 @@
 <template>
   <b-container fluid>
-    <b-row>
-      <b-col>
-        <div class="page-title-box">
-          <h4 class="page-title">สต็อกสินค้า</h4>
-        </div>
+    <b-row class="mt-3 mb-2 mb-xl-4">
+      <b-col class="col-auto d-none d-sm-block">
+        <h1 class="h5">สต็อกสินค้า</h1>
       </b-col>
-      <b-col class="text-right">
+      <b-col class="col-auto ml-auto text-right mt-n1">
         <b-button variant="outline-primary">
           <b-icon icon="plus"></b-icon>เพิ่มสต็อกสินค้า
         </b-button>
@@ -15,13 +13,13 @@
     <b-row>
       <b-col>
         <b-card class="mb-3">
-          <h4>สินค้าใกล้หมด</h4>
+          <h4>สต็อกใกล้หมด</h4>
           <b-table striped hover :items="items"></b-table>
         </b-card>
       </b-col>
       <b-col>
         <b-card class="mb-3">
-          <h4>สินค้าเพิ่มล่าสุด</h4>
+          <h4>สต็อกเพิ่มล่าสุด</h4>
           <b-table striped hover :items="items"></b-table>
         </b-card>
       </b-col>

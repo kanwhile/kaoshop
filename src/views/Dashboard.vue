@@ -1,14 +1,13 @@
 <template>
   <b-container fluid>
+    
+    <b-row class="mt-3 mb-2 mb-xl-4">
+      <b-col class="col-auto d-none d-sm-block">
+        <h1 class="h5">แดชบอร์ด</h1>
+      </b-col>
+    </b-row>
     <b-row>
       <b-col>
-        <div class="row">
-          <div class="col-12">
-            <div class="page-title-box">
-              <h4 class="page-title">แดชบอร์ด</h4>
-            </div>
-          </div>
-        </div>
         <b-row>
           <b-col md="5">
             <b-row>
