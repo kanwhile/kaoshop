@@ -63,6 +63,7 @@
                 v-model="payment"
                 size="lg"
                 required
+                autocomplete="off"
                 placeholder="ระบุจำนวนเงินที่รับมา"
                 @change="paymentDifferent()"
               ></b-form-input>
@@ -89,8 +90,6 @@
     </b-row>
   </b-container>
 </template>
-
-
 <script>
 import axios from "axios";
 import * as config from "../../config/index.js";
