@@ -155,9 +155,7 @@ export default {
     addPayment: function() {
       axios
         .post(`${config.dev.API_URI}/api/sales/create`, this.items)
-        //.post(`https://localhost:44311/api/sales/create`, this.items)
         .then(() => {
-          alert("สำเร็จ");
           this.keyword = "";
           this.IsPayment = false;
           this.items = [];

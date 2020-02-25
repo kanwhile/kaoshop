@@ -29,12 +29,12 @@
                 <template v-slot:cell(productName)="row">
                   <b class="text-primary">{{row.index + 1}}. {{ row.value}}</b>
                 </template>
-                <template v-slot:cell(quality)="row" md="1">
-                  <b-input v-model="row.value" type="number" @change="setQuality(row)"></b-input>
+                <template v-slot:cell(quantity)="row" md="1">
+                  <b-input v-model="row.value" type="number" @change="setQuantity(row)"></b-input>
                 </template>
 
                 <template v-slot:cell(action)="row">
-                  <b-button variant="outline-danger" size="sm" @click="removeItems(row.item)">ลบ</b-button>
+                  <b-button variant="outline-danger" size="sm" @click="removeProduct(row.item)">ลบ</b-button>
                 </template>
                 <template v-slot:empty>
                   <h4 class="text-center">ไม่มีรายการสินค้า</h4>
@@ -56,6 +56,8 @@
 </template>
 
 <script>
+import axios from "axios";
+import * as config from "../../config/index.js";
 import { mapState, mapActions } from "vuex";
 export default {
   name: "stock-form",
@@ -99,7 +101,7 @@ export default {
           thStyle: "width: 15%"
         },
         {
-          key: "quality",
+          key: "quantity",
           label: "จำนวน",
           sortable: false,
           thStyle: "width: 15%"
@@ -117,17 +119,32 @@ export default {
   methods: {
     ...mapActions({
       removeProduct: "stockform/removeProduct",
-      setQuality: "stockform/setQuality"
+      removeAllProduct: "stockform/removeAllProduct",
+      setQuantity: "stockform/setQuantity"
     }),
     onSubmit(evt) {
       evt.preventDefault();
-      alert(JSON.stringify(this.products));
+      let data = this.products.map(item => {
+        return {
+          id: item.id,
+          minimum: 0,
+          quantity: item.quantity,
+          productId: item.id
+        };
+      });
+      
+      axios
+        .post(`${config.dev.API_URI}/api/stock/addstock`, data)
+        .then(() => {
+          this.form = [];
+          this.removeAllProduct();
+        })
+        .catch(error => {
+          alert("Error : " + error);
+        });
     },
     onReset() {
       this.$emit("eventBack", false);
-    },
-    removeItems: function(item) {
-      this.removeProduct(item);
     }
   }
 };

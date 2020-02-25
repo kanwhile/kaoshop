@@ -12,16 +12,13 @@
     </b-row>
     <b-row v-show="!isShowForm">
       <b-col>
-        <b-card class="mb-3">
-          <h4>สต็อกใกล้หมด</h4>
-          <b-table striped hover :items="items"></b-table>
-        </b-card>
+        <stock-table></stock-table>
       </b-col>
       <b-col>
-        <b-card class="mb-3">
+        <!-- <b-card class="mb-3">
           <h4>สต็อกเพิ่มล่าสุด</h4>
-          <b-table striped hover :items="items"></b-table>
-        </b-card>
+          <b-table striped hover :items="lastStock" :busy.sync="isBusy" :fields="fields"></b-table>
+        </b-card> -->
       </b-col>
     </b-row>
     <b-row v-show="isShowForm">
@@ -30,30 +27,25 @@
       </b-col>
       <b-col>
         <stock-form @eventBack="value => isShowForm = value"></stock-form>
-        
       </b-col>
     </b-row>
   </b-container>
 </template>
 <script lang="ts">
+import StockTable from "../components/Stock/StockTable.vue";
 import StockForm from "../components/Stock/StockForm.vue";
 import Search from "../components/Product/Search.vue";
 export default {
   components: {
     StockForm,
-    Search
+    Search,
+    StockTable
   },
   data() {
-    return {
+    return {     
       isShowForm: false,
-      items: [
-        { age: 40, first_name: "Dickerson", last_name: "Macdonald" },
-        { age: 21, first_name: "Larsen", last_name: "Shaw" },
-        { age: 89, first_name: "Geneva", last_name: "Wilson" },
-        { age: 38, first_name: "Jami", last_name: "Carney" }
-      ]
     };
   },
-  methods: {}
+  mounted() {}
 };
 </script>

@@ -6,19 +6,22 @@ const getters = {}
 
 const actions = {
   setProduct: ({ commit }, payload) => {
-    commit('SET_PRODUCT_NAME', payload)
+    commit('SET_PRODUCT', payload)
+  },
+  removeAllProduct: ({commit},payload) => {
+    commit('REMOVE_ALL_PRODUCT', payload)
   },
   removeProduct: ({ commit }, payload) => {
     commit('REMOVE_PRODUCT', payload)
   },
-  setQuality: ({ commit }, payload) => {
-    commit('SET_PRODUCT_QUALITY', payload)
+  setQuantity: ({ commit }, payload) => {
+    commit('SET_PRODUCT_QUANTITY', payload)
   }
 }
 
 const mutations = {
-  SET_PRODUCT_NAME(state, payload) {
-    payload.quality = 1;
+  SET_PRODUCT(state, payload) {
+    payload.quantity = 1;
     state.products.push(payload);
   },
   REMOVE_PRODUCT(state, payload) {
@@ -26,8 +29,12 @@ const mutations = {
       state.products.findIndex(v => v.id === payload.id),1
     );
   },
-  SET_PRODUCT_QUALITY(state,payload){
-    state.products[payload.index].quality = payload.value;
+  REMOVE_ALL_PRODUCT(state){
+    state.products = [];
+  },
+  SET_PRODUCT_QUANTITY(state,payload){
+    console.log(payload.value);
+    state.products[payload.index].quantity = payload.value;
   }
 }
 
