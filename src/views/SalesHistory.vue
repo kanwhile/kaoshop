@@ -2,22 +2,22 @@
   <b-container fluid>
     <b-row class="mt-3 mb-2 mb-xl-4">
       <b-col class="col-auto d-none d-sm-block">
-        <h1 class="h5">จัดการสินค้า</h1>
+        <h1 class="h5">ประวัติการขาย</h1>
       </b-col>
     </b-row>
-    <b-row>
+    <div class="row">
       <div class="col">
-        <product-table></product-table>
+        <salehistory></salehistory>
       </div>
-    </b-row>
+    </div>
   </b-container>
 </template>
 <script lang="ts">
-import productTable from '../components/Product/Products.vue'
+import salehistory from "../components/Sales/History.vue";
 export default {
   components: {
-    productTable : productTable
-  },
+    salehistory: salehistory
+  }
 };
 </script>
 <style>

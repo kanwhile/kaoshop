@@ -9,8 +9,8 @@ module.exports = {
 
     // Various Dev Server settings
     host: 'http://localhost',
-    port: 81, 
-    API_URI: 'http://localhost:81'
+    port: 80, 
+    API_URI: 'http://localhost:80'
     // skipping other options as they are only convenience features
   },
   build: {
