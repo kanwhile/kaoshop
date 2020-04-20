@@ -4,6 +4,11 @@
       <b-col class="col-auto d-none d-sm-block">
         <h1 class="h5">ขายสินค้า</h1>
       </b-col>
+      <b-col class="col-auto ml-auto text-right mt-n1">
+        <b-button href="#/sales/history" variant="outline-primary" @click="isShowForm=!isShowForm" v-if="!isShowForm">
+          <b-icon icon="plus"></b-icon>ประวัติการขาย
+        </b-button>
+      </b-col>
     </b-row>
     <div class="row">
       <div class="col">

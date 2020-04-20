@@ -9,7 +9,7 @@
               v-model="keyword"
               type="text"
               placeholder="ระบุชื่อ"
-              @keypress="fetchProduct"
+              @input="fetchProduct"
             ></b-form-input>
           </b-form-group>
 
@@ -81,7 +81,7 @@
                 variant="success"
                 size="lg"
                 @click="addPayment"
-                :disabled="paymentChange <= 0"
+                :disabled="paymentChange < 0"
               >ยืนยันชำระเงิน</b-button>
             </div>
           </b-card-body>
